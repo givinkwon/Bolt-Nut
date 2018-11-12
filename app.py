@@ -1,11 +1,11 @@
-from config import query
 from flask import Flask, request, session, redirect, render_template, url_for
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
-def 
+def main():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12) # for session
