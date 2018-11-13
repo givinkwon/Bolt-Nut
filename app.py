@@ -17,8 +17,19 @@ def signup():
 
 @app.route('/add_project')
 def add_project():
-    return render_template('/project/add_project')
+    return render_template('/project/add_project.html')
 
+@app.route('/search_project')
+def search_project():
+    return render_template('/project/search_project.html')
+
+@app.route('/prepare')
+def prepare():
+    return render_template('prepare.html')
+
+@app.route('/terms_of_service')
+def term_of_service():
+    return render_template('terms_of_service.html')
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12) # for session
