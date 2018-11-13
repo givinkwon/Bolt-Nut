@@ -1,41 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
-html, body{
-    --main-bg-color: #EAEAEA;
-    margin:0px;
-    height:100%;
-    width:100%;
-    font-family: 'Gothic A1', sans-serif;
+<!DOCTYPE HTML>
+<html>
 
-}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- IE 브라우저 호환성보기 무시 -->
+        <meta name = "viewport" width = "device-width"> <!-- http://aboooks.tistory.com/352 -->
+        <meta name="apple-mobile-web-app-title" content="볼트앤너트 알림"> 
+        <meta name="description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트"> 
+        <!-- https://hunit.tistory.com/312 -->
+        <!-- // facebook SEO- https://wonism.github.io/meta-for-social/ -->
+        <meta name="og:title" content="볼트앤너트 알림">
+        <meta name="og:url" content="https://www.bolt&nut.com">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트">
+        <!-- twitter SEO - https://blog.outsider.ne.kr/922 // 트위터 카드 신청해야함 -->
+        <meta name="twitter:card" content="summary" /> 
+        <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
+        <link rel="shortcut icon" href="/path/to/favicon.ico">
+        <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src=""></script>
+        
+        <title>볼트앤너트 알림</title>
+    </head>
+        
+    <body>
+       {% include "layout/header.html" %} <!-- include header -->    
+        
 
-.header-container, .body-container, nav-container{
-    width: 100%;
-}
-
-.header-contaniner{
-    background: var(--main-bg-color);
-}
-
-.body-container{
-}
-
-.nav-contaniner{
+    </body>
     
-}
-
-.header, .body, .nav{
-    width: 177.77vh;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.header{
-    font-size:2vh;
-    font-weight:600;
-}
-
-.header ul{
-    list-style: none;
-    color: white;
-    float: left;
-}
+    <footer>
+    
+    </footer>
+</html>

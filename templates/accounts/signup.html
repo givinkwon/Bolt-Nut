@@ -18,13 +18,19 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+       
         <script type="text/javascript" src=""></script>
         
         <title>볼트앤너트 회원가입</title>
     </head>
         
     <body>
-       {% extends "layout/header.html" %} <!-- include header -->          
+       {% include "layout/header.html" %} <!-- include header -->
+        <form class="signup_form">
+                <input type="text" id="username" placeholder="Username" class="box">
+                <input type="password" id="password" placeholder="Password" class="box">
+
+        </form>
     </body>
     
     <footer>
