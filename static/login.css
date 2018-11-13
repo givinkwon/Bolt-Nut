@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+html, body{
+    margin:0px;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+.box{
+    width:406px;
+    display:block;
+    height:80px;
+    margin-bottom: 20px;
+    padding:0;
+    color:#787878;
+    font-size:35px;
+    font-weight:500;
+    padding-left:40px;
+    border:#787878 2px solid;
+    border-radius: 2px;
+}
+
+.box::placeholder {
+    color: #CECECE; 
+    font-size: 35px; 
+    font-weight:300;
+}

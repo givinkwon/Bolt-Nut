@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+html, body{
+    --main-bg-color: #EAEAEA;
+    margin:0px;
+    height:100%;
+    width:100%;
+    font-family: 'Gothic A1', sans-serif;
+
+}
+
+.header-container, .body-container, nav-container{
+    width: 100%;
+}
+
+.header-container{
+    background: var(--main-bg-color);
+}
+
+.body-container{
+}
+
+.nav-contaniner{
+    
+}
+
+.header, .body, .nav{
+    width: 177.77vh;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header{
+    font-size:2vh;
+    font-weight:600;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a{
+    text-decoration: none;
+    color: black
+        ;
+}
+.header-nav-inner{
+    width: 120vh;
+    display:inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-nav-inner-brand{
+    text-decoration: none;
+    font-size: 3vh;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-nav-inner-menu{
+    width: 60vh;
+    list-style: none;
+    color: white;
+    display:inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav-inner-sign{
+    width: 20vh;
+    list-style: none;
+    color: white;
+    display:inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
