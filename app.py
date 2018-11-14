@@ -41,20 +41,20 @@ def btn_signup():
         user_pw = request.form['password']
         user_phone = request.form['phone']
         
-        
         conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
         cursor = conn.cursor()
-        query = "SELECT * FROM user"
+        query = "SELECT * FROM user WHERE user_name = '%s'"% (user_name)
         cursor.execute(query)
         data = cursor.fetchall()
-        
         
         if data:
             error = "이메일이 이미 존재합니다. 다른 아이디를 사용해주세요."
             return render_template('/accounts/signup.html')
         else:
-            cursor.close()
-            conn.close()
+            query = "INSERT INTO user(user_class, user_email, user_name, user_password, user_phone) VALUES (%s, %s, %s, %s, %s)"
+            value = (user_class, user_email, user_name, user_pw, user_phone)
+            cursor.execute(query, value)
+            data = cursor.fetchall()
             return render_template('index.html')
    
             
