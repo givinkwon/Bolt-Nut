@@ -18,7 +18,7 @@ p2{
     font-family: 'Gothic A1', sans-serif;
     font-size:2vh;
     font-weight: 400;
-    color: var(--main-bg-color);
+    color: #808080;
 }
 
 .header-container, .body-container, nav-container{
@@ -89,7 +89,9 @@ p2{
 }
 
 .content{
-    margin: 3vh;
+    margin-top: 5vh;
+    margin-left: 40vh;
+    margin-right: 40vh;
     background-color: var(--main-bg-color);
 }
 
@@ -98,10 +100,83 @@ p2{
     padding: 3vh;
     margin: auto;
     margin-bottom: 2vh;
+    width: 100%;
 }
 
 .content-body{
     background-color: white;
+    padding: 3vh;
     margin:auto;
-    
+    display: inline-flex;
+    width: 100%;
+}
+
+.signup-body{
+    margin-top: 2vh;
+    width: 50%;
+    text-align: center;
+}
+
+.signup-aside{
+    margin-top: 2vh;
+    width: 50%;
+}
+
+.signup-aside img{
+    margin-top: 2vh;
+    padding: 5vh;
+    width: 75%;
+}
+
+.signup-class{
+    margin-bottom: 1vh;
+    display: inline-flex;
+}
+
+.signup-form{
+    width: 100%;
+}
+
+.signup-form-detail label{
+    width: 10vh;
+    text-align: right;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    font-weight: bold;
+    padding-top: 1.8vh;
+}
+
+.signup-form-detail{
+    display: inline-flex;
+    padding: 2vh;
+}
+
+.signup-form-detail .class{
+    padding-top: 1vh;
+    font-size: 2vh;
+}
+
+.box{
+    width:30vh;
+    height: 3vh;
+    margin: 1vh;
+    font-weight: bold;
+}
+
+
+.signup_btn{
+    text-align: center;
+}
+
+.btn_signup{
+    width:22vh;
+    display:inline-flex;
+    height:5vh;
+    color:#FFFFFF;
+    font-size:2.5vh;
+    font-weight:500;
+    letter-spacing:6px;
+    background:#3F63AE;
+    align-items: center;
+    justify-content: center;
 }

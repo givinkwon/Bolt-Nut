@@ -29,26 +29,57 @@
         <div class="body-container">
             <div class="content">
                 <div class="content-header">
-                    <p3>회원가입</p3><br>
+                    <p3>회원가입</p3><br><br>
                     <p2>당신의 아이디어를 실현하세요.</p2>
                 </div>
                 <div class="content-body">
-                    <form class="signup_form">
-                        <label>이용목적</label>
-                        <input type="radio" name="client">클라이언트
-                        <input type="radio" name="expert">전문가
-                        <label>이메일</label> 
-                        <input type="text" id="email" placeholder="email" class="box">
-                        <label>아이디</label>
-                        <input type="text" id="username" placeholder="username" class="box">
-                        <label>비밀번호</label>
-                        <input type="password" id="password" placeholder="Password" class="box">
-                        <input type="submit" value="회원가입">
-                    </form>
+                    <section class="signup-body">
+                        <form class="signup-form" method="post" action="http://localhost:5000/sign_up"> 
+                            <!-- action value is route value-->
+                            
+                                <div class="signup-form-detail">
+                                    <label>이용목적</label>
+                                    <div class="class">
+                                        <div class="box">
+                                        <input type="radio" id="client" name="client">클라이언트
+                                        <input type="radio" id="name" name="expert">전문가
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="signup-form-detail">
+                                    <label>이메일</label> 
+                                    <input type="text" name="email" class="box">
+                                </div>
+                                <br>
+                                <div class="signup-form-detail">
+                                    <label>아이디</label>
+                                    <input type="text" name="username" class="box">
+                                </div>
+                                <br>
+                                <div class="signup-form-detail">
+                                    <label>비밀번호</label>
+                                    <input type="password" name="password" class="box">
+                                </div>
+                                <br>
+                                <div class="signup-form-detail">
+                                    <label>전화번호</label>
+                                    <input type="text" name="phone" class="box">
+                                </div>
+                            
+                            <div class=signup_btn>
+                                <input type="submit" class="btn_signup" name="btn_signup" value="회원가입">
+                            </div>
+                        </form>
+                    </section>
+                    <aside class="signup-aside">
+                        <image src="/static/img/bolt-nut.png/"></image>
+                    </aside>
                 </div>        
-                  
+            
             </div>
         </div>
+        
  </body>
     
     <footer>

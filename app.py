@@ -31,6 +31,29 @@ def prepare():
 def term_of_service():
     return render_template('terms_of_service.html')
 
+@app.route('/sign_up', methods=['POST', 'GET'])
+def btn_signup():
+    error = None
+    if request.method == 'POST':
+        user_email = request.form['email']
+        user_name = request.form['username']
+        user_pw = request.form['password']
+        user_phone = request.form['phone']
+        
+        conn = mysql.connect(host='localhost', user='root', passwd='1234', db='boltnut', charset='utf8')
+        cursor = conn.cursor()
+        query = "SELECT * FROM user WHERE user_name '%s' " %(user_name)
+        cursor.execute(query)
+        data = cursor.fetchall()
+        
+        if data:
+            error = "이메일이 이미 존재합니다. 다른 아이디를 사용해주세요."
+            
+        cursor.close()
+        conn.close()
+        
+   
+            
 if __name__ == "__main__":
     app.secret_key = os.urandom(12) # for session
     app.run(debug=True, host='0.0.0.0') # https://flask-docs-kr.readthedocs.io/ko/latest/quickstart.html / public ip acess 가능 
