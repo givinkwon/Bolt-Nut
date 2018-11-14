@@ -18,7 +18,7 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
-       
+        <link href="{{ url_for('static', filename='signup.css') }}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src=""></script>
         
         <title>볼트앤너트 회원가입</title>
@@ -41,8 +41,8 @@
                                     <label>이용목적</label>
                                     <div class="class">
                                         <div class="box">
-                                        <input type="radio" id="client" name="client">클라이언트
-                                        <input type="radio" id="name" name="expert">전문가
+                                        <input type="radio" name="class" value="0">클라이언트
+                                        <input type="radio" name="class" value="1">전문가
                                         </div>
                                     </div>
                                 </div>

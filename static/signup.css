@@ -1,25 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
-html, body{
-    margin:0px;
+p3{
     font-family: 'Gothic A1', sans-serif;
+    font-size:3vh;
+    font-weight: 600;
+}
+
+p2{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:2vh;
+    font-weight: 400;
+    color: #808080;
+}
+
+
+.signup-body{
+    margin-top: 2vh;
+    width: 50%;
+    text-align: center;
+}
+
+.signup-aside{
+    margin-top: 2vh;
+    width: 50%;
+}
+
+.signup-aside img{
+    margin-top: 2vh;
+    padding: 5vh;
+    width: 75%;
+}
+
+.signup-class{
+    margin-bottom: 1vh;
+    display: inline-flex;
+}
+
+.signup-form{
+    width: 100%;
+}
+
+.signup-form-detail label{
+    width: 10vh;
+    text-align: right;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    font-weight: bold;
+    padding-top: 1.8vh;
+}
+
+.signup-form-detail{
+    display: inline-flex;
+    padding: 2vh;
+}
+
+.signup-form-detail .class{
+    padding-top: 1vh;
+    font-size: 2vh;
 }
 
 .box{
-    width:406px;
-    display:block;
-    height:80px;
-    margin-bottom: 20px;
-    padding:0;
-    color:#787878;
-    font-size:35px;
-    font-weight:500;
-    padding-left:40px;
-    border:#787878 2px solid;
-    border-radius: 2px;
+    width:30vh;
+    height: 3vh;
+    margin: 1vh;
+    font-weight: bold;
 }
 
-.box::placeholder {
-    color: #CECECE; 
-    font-size: 35px; 
-    font-weight:300;
+
+.signup_btn{
+    text-align: center;
+}
+
+.btn_signup{
+    width:22vh;
+    display:inline-flex;
+    height:5vh;
+    color:#FFFFFF;
+    font-size:2.5vh;
+    font-weight:500;
+    letter-spacing:6px;
+    background:#3F63AE;
+    align-items: center;
+    justify-content: center;
 }

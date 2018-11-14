@@ -1,6 +1,6 @@
 from flask import Flask, request, session, redirect, render_template, url_for
 import os
-
+import pymysql
 app = Flask(__name__)
 
 @app.route('/')
@@ -35,23 +35,27 @@ def term_of_service():
 def btn_signup():
     error = None
     if request.method == 'POST':
+        user_class = request.form['class']
         user_email = request.form['email']
         user_name = request.form['username']
         user_pw = request.form['password']
         user_phone = request.form['phone']
         
-        conn = mysql.connect(host='localhost', user='root', passwd='1234', db='boltnut', charset='utf8')
+        
+        conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
         cursor = conn.cursor()
-        query = "SELECT * FROM user WHERE user_name '%s' " %(user_name)
+        query = "SELECT * FROM user"
         cursor.execute(query)
         data = cursor.fetchall()
         
+        
         if data:
             error = "이메일이 이미 존재합니다. 다른 아이디를 사용해주세요."
-            
-        cursor.close()
-        conn.close()
-        
+            return render_template('/accounts/signup.html')
+        else:
+            cursor.close()
+            conn.close()
+            return render_template('index.html')
    
             
 if __name__ == "__main__":
