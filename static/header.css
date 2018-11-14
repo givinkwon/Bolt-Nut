@@ -5,7 +5,20 @@ html, body{
     height:100%;
     width:100%;
     font-family: 'Gothic A1', sans-serif;
+    background: var(--main-bg-color);
+}
 
+p3{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:3vh;
+    font-weight: 600;
+}
+
+p2{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:2vh;
+    font-weight: 400;
+    color: var(--main-bg-color);
 }
 
 .header-container, .body-container, nav-container{
@@ -13,10 +26,11 @@ html, body{
 }
 
 .header-container{
-    background: var(--main-bg-color);
+    background: white;
 }
 
 .body-container{
+    background: var(--main-bg-color);
 }
 
 .nav-contaniner{
@@ -72,4 +86,22 @@ html, body{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+}
+
+.content{
+    margin: 3vh;
+    background-color: var(--main-bg-color);
+}
+
+.content-header{
+    background-color: white;
+    padding: 3vh;
+    margin: auto;
+    margin-bottom: 2vh;
+}
+
+.content-body{
+    background-color: white;
+    margin:auto;
+    
 }
