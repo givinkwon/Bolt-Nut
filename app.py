@@ -44,6 +44,7 @@ def btn_signup():
         cursor = conn.cursor()
         query = "SELECT * FROM user WHERE user_name '%s' " %(user_name)
         cursor.execute(query)
+        
         data = cursor.fetchall()
         
         if data:
