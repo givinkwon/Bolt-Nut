@@ -4,22 +4,76 @@ html, body{
     font-family: 'Gothic A1', sans-serif;
 }
 
-.box{
-    width:406px;
-    display:block;
-    height:80px;
-    margin-bottom: 20px;
-    padding:0;
-    color:#787878;
-    font-size:35px;
-    font-weight:500;
-    padding-left:40px;
-    border:#787878 2px solid;
-    border-radius: 2px;
+p3{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:3vh;
+    font-weight: 600;
 }
 
-.box::placeholder {
-    color: #CECECE; 
-    font-size: 35px; 
-    font-weight:300;
+p2{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:2vh;
+    font-weight: 400;
+    color: #808080;
+}
+
+.login-body{
+    margin-top: 2vh;
+    width: 50%;
+    text-align: center;
+    padding: 10vh;
+}
+
+.login-aside{
+    margin-top: 2vh;
+    width: 50%;
+}
+
+.login-aside img{
+    margin-top: 2vh;
+    padding: 5vh;
+    width: 75%;
+}
+
+.login-form{
+    width: 100%;
+}
+
+.login-form-detail label{
+    width: 10vh;
+    text-align: right;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    font-weight: bold;
+    padding-top: 1.8vh;
+}
+
+.login-form-detail{
+    display: inline-flex;
+    padding: 2vh;
+}
+
+.box{
+    width:30vh;
+    height: 3vh;
+    margin: 1vh;
+    font-weight: bold;
+}
+
+
+.login_btn{
+    text-align: center;
+}
+
+.btn_login{
+    width:22vh;
+    display:inline-flex;
+    height:5vh;
+    color:#FFFFFF;
+    font-size:2.5vh;
+    font-weight:500;
+    letter-spacing:6px;
+    background:#3F63AE;
+    align-items: center;
+    justify-content: center;
 }

@@ -27,9 +27,40 @@
     <body>
        {% include "layout/header.html" %} <!-- include header -->    
         
-        <input type="text" id="username" placeholder="Username" class="box">
-        <input type="password" id="password" placeholder="Password" class="box">
-        <div class="login">시작하기</div>
+       <div class="body-container">
+            <div class="content">
+                <div class="content-header">
+                    <p3>로그인</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
+                </div>
+                <div class="content-body">
+                    <section class="login-body">
+                        <form class="login-form" method="post" action="http://localhost:5000/login"> 
+                            <!-- action value is route value-->
+                            
+                                <div class="login-form-detail">
+                                    <label>아이디</label>
+                                    <input type="text" name="username" class="box">
+                                </div>
+                                <br>
+                                <div class="login-form-detail">
+                                    <label>비밀번호</label>
+                                    <input type="password" name="password" class="box">
+                                </div>
+                            
+                            <div class=login_btn>
+                                <input type="submit" class="btn_login" value="로그인하기">
+                            </div>
+                        </form>
+                    </section>
+                    
+                    <aside class="login-aside">
+                        <image src="/static/img/bolt-nut.png/"></image>
+                    </aside>
+                </div>        
+            
+            </div>
+        </div>
     </body>
     
     <footer>
