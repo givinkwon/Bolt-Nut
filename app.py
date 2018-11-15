@@ -55,7 +55,7 @@ def btn_signup():
             query = "INSERT INTO user(user_class, user_email, user_name, user_password, user_phone) VALUES (%s, %s, %s, %s, %s)"
             value = (user_class, user_email, user_name, user_pw, user_phone)
             cursor.execute(query, value)
-            data = cursor.fetchall()
+            conn.commit()
             return render_template('index.html')
    
             
