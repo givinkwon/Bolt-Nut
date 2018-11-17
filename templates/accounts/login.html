@@ -18,6 +18,7 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src=""></script>
         
@@ -35,7 +36,7 @@
                 </div>
                 <div class="content-body">
                     <section class="login-body">
-                        <form class="login-form" method="post" action="http://localhost:5000/login"> 
+                        <form class="login-form" method="post" action="http://localhost:5000/login_action"> 
                             <!-- action value is route value-->
                             
                                 <div class="login-form-detail">
@@ -47,10 +48,14 @@
                                     <label>비밀번호</label>
                                     <input type="password" name="password" class="box">
                                 </div>
-                            
-                            <div class=login_btn>
-                                <input type="submit" class="btn_login" value="로그인하기">
-                            </div>
+                                <div>
+                                    {% if error %}
+                                        <p>{{error}}</p>
+                                    {% endif %}
+                                </div>
+                                <div class=login_btn>
+                                    <input type="submit" class="btn_login" value="로그인하기">
+                                </div>
                         </form>
                     </section>
                     

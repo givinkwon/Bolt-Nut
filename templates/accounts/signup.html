@@ -18,6 +18,7 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='signup.css') }}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src=""></script>
         
@@ -41,7 +42,7 @@
                                     <label>이용목적</label>
                                     <div class="class">
                                         <div class="box">
-                                        <input type="radio" name="class" value="0">클라이언트
+                                        <input type="radio" name="class" value="0" checked>클라이언트
                                         <input type="radio" name="class" value="1">전문가
                                         </div>
                                     </div>
@@ -66,7 +67,11 @@
                                     <label>전화번호</label>
                                     <input type="text" name="phone" class="box">
                                 </div>
-                            
+                                <div>
+                                    {% if error %}
+                                        <p>{{error}}</p>
+                                    {% endif %}
+                                </div>
                             <div class=signup_btn>
                                 <input type="submit" class="btn_signup" name="btn_signup" value="회원가입">
                             </div>

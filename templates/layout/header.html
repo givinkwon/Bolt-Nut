@@ -6,26 +6,27 @@
             <div class="header" >
                 <div class="header-nav-inner">
                     <div class="header-nav-inner-brand">
-                        <a href="/">BoltNut</a>
+                        <a href="/" class="logo">Bolt&amp;Nut</a>
                     </div>
                     <ul class="header-nav-inner-menu">
+                     {% if not session['class'] == '1' %}
                         <li>
                             <a href="add_project">프로젝트 등록</a>
                         </li>
-                        
+                     {% endif %}
                         <li>
                             <a href="search_project">프로젝트 찾기</a>
                         </li>
                         
                         <li>
-                            <a href="prepare">전문가 목록</a>
+                            <a href="expert">전문가 목록</a>
                         </li>
                         
                         <li>
-                            <a href="terms_of_service">이용 방법</a>
+                            <a href="terms_of_service">서비스 소개</a>
                         </li>
                     </ul>
-                    
+                    {% if session['username'] == null %}
                     <ul class="header-nav-inner-sign">
                         <li>
                             <a class="signup-btn" href="signup">회원가입</a>
@@ -35,6 +36,19 @@
                             <a class="signin-btn" href="login">로그인</a>
                         </li>
                     </ul>
+                    
+                    {% else %}
+                     <ul class="header-nav-inner-sign">
+                        <li>
+                            <a class="signup-btn" href="profile">프로필보기</a>
+                        </li>
+            
+                        <li>
+                            <a class="signin-btn" href="logout">로그아웃</a>
+                        </li>
+                    </ul>
+                    
+                    {% endif %}
                 </div>
             </div>
         </div> <!-- http://webdir.tistory.com/310 -->

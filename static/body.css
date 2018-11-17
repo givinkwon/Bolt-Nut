@@ -1,0 +1,22 @@
+.content{
+    margin-top: 5vh;
+    margin-left: 40vh;
+    margin-right: 40vh;
+    background-color: var(--main-bg-color);
+}
+
+.content-header{
+    background-color: white;
+    padding: 3vh;
+    margin: auto;
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.content-body{
+    background-color: white;
+    padding: 3vh;
+    margin:auto;
+    display: inline-flex;
+    width: 100%;
+}

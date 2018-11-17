@@ -2,7 +2,6 @@
 html, body{
     --main-bg-color: #EAEAEA;
     margin:0px;
-    height:100%;
     width:100%;
     font-family: 'Gothic A1', sans-serif;
     background: var(--main-bg-color);
@@ -39,7 +38,6 @@ p2{
 
 .header, .body, .nav{
     width: 177.77vh;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -51,11 +49,21 @@ p2{
     justify-content: center;
 }
 
-.header a{
+.header-nav-inner-menu a{
     text-decoration: none;
-    color: black
-        ;
+    color: black;
 }
+
+.header-nav-inner-brand a{
+    text-decoration: none;
+    color: #3f63ae;
+}
+
+.header-nav-inner-sign a{
+    text-decoration: none;
+    color: black;
+}
+
 .header-nav-inner{
     width: 120vh;
     display:inline-flex;
@@ -88,25 +96,4 @@ p2{
     justify-content: space-between;
 }
 
-.content{
-    margin-top: 5vh;
-    margin-left: 40vh;
-    margin-right: 40vh;
-    background-color: var(--main-bg-color);
-}
 
-.content-header{
-    background-color: white;
-    padding: 3vh;
-    margin: auto;
-    margin-bottom: 2vh;
-    width: 100%;
-}
-
-.content-body{
-    background-color: white;
-    padding: 3vh;
-    margin:auto;
-    display: inline-flex;
-    width: 100%;
-}

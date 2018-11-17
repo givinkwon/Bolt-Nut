@@ -18,13 +18,200 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='add_project.css') }}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src=""></script>
         
         <title>프로젝트 등록</title>
     </head>
         
     <body>
-       {% include "layout/header.html" %} <!-- include header -->          
+       {% include "layout/header.html" %} <!-- include header -->    
+        
+       <div class="body-container">
+            <div class="content">
+                <div class="content-header">
+                    <p3>프로젝트 등록</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
+                </div>
+                <div class="content-body">
+                    <div class="content-body">
+                    <section class="add-body">
+                        <form class="add-form" method="post" action="http://localhost:5000/submit_project" enctype="multipart/form-data" charset = "utf-8"> 
+                            <!-- action value is route value-->
+                            
+                                <div class="error">
+                                    {% if error %}
+                                        <p4>{{error}}</p4>
+                                    {% endif %}
+                                </div>    
+                            
+                                <div class="add-form-detail">
+                                    <label>카테고리</label>
+                                        <div class="box2">
+                                            <select class='project_category' name="project_category">
+                                                <option value="기구설계">설계-기구설계</option>
+                                                <option value="기계설계">설계-기계설계</option>
+                                                <option value="회로설계">설계-회로설계</option>
+                                                <option value="3D프린터">프로토타입-3D프린터</option>
+                                                <option value="목업">프로토타입-목업</option>
+                                                <option value="금형">양산-금형</option>
+                                                <option value="사출">양산-사출</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>프로젝트 제목</label>
+                                    {% if project_title %}
+                                    <input type="text" name="project_title" value={{project_title}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_title" class="box">
+                                    {% endif %}
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>예상 기간</label>
+                                    {% if project_period %}
+                                    <input type="text" name="project_period" value={{project_period}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_period" class="box">
+                                    {% endif %}
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>지출 가능 예산</label>
+                                    {% if project_budget %}
+                                    <input type="text" name="project_budget" value={{project_budget}} class="box" placeholder="ex) 500만원">
+                                    {% else %}
+                                    <input type="text" name="project_budget" class="box" placeholder="ex) 500만원">
+                                    {% endif %}
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>기획 상태</label>
+                                    <div class="state">
+                                        <div class="project_state">
+                                        <input type="radio" class='box1' name="project_state" value="0" checked>아이디어만 있습니다.
+                                        </div>
+                                        <br>
+                                        <div class="project_state">
+                                        <input type="radio" class='box1' name="project_state" value="1">디자인된 모델링을 보유하고 있습니다.
+                                        </div>
+                                        <br>
+                                        <div class="project_state">
+                                        <input type="radio" class='box1' name="project_state" value="2">디자인된 모델링과 설계된 데이터를 보유하고 있습니다.    
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>프로젝트 내용</label>
+                                    {% if project_content %}
+                                    <input type="text" name="project_content" value={{project_content}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_content" class="box">
+                                    {% endif %}
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>기획/사진/데이터</label>
+                                    <input type = "file" name="file" class="file" charset="utf-8">
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>모집 마감 일자</label>
+                                    {% if project_finish %}
+                                    <input type="text" name="project_finish" value={{project_finish}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_finish" class="box">
+                                    {% endif %}
+                                </div>
+                                <br>
+                                <div class="add-form-detail">
+                                    <label>미팅 방법</label>
+                                    <div class="meeting">
+                                        <div class="box2">
+                                            <select class='project_meeting' name="project_meeting">
+                                                <option value="오프라인 미팅">오프라인 미팅</option>
+                                                <option value="온라인 미팅">온라인 미팅</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            
+                                <div class="add-form-detail">
+                                    <label>클라이언트 위치</label>
+                                        <div class='box2'>
+                                            <select class='location' name="project_location">
+                                                <option value="서울">서울</option>
+                                                <option value="부산">부산</option>
+                                                <option value="대구">대구</option>
+                                                <option value="인천">인천</option>
+                                                <option value="광주">광주</option>
+                                                <option value="대전">대전</option>
+                                                <option value="울산">울산</option>
+                                                <option value="경기도">경기도</option>
+                                                <option value="강원도">강원도</option>
+                                                <option value="충청북도">충청북도</option>
+                                                <option value="충청남도">충청남도</option>
+                                                <option value="전라북도">전라북도</option>
+                                                <option value="전라남도">전라남도</option>
+                                                <option value="경상북도">경상북도</option>
+                                                <option value="경상남도">경상남도</option>
+                                                <option value="제주도">제주도</option>
+                                            </select>
+                                        </div>
+                                    {% if project_location_detail %}
+                                    <input type="text" name="project_location_detail" value={{project_location_detail}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_location_detail" placeholder="도로명주소를 적어주세요."  class="box">
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="add-form-detail">
+                                    <label>예상 시작일</label>
+                                    {% if project_start %}
+                                    <input type="text" name="project_start" value={{project_start}} class="box">
+                                    {% else %}
+                                    <input type="text" name="project_start" class="box">
+                                    {% endif %}
+                                </div>
+                            
+                               <div class="add-form-detail">
+                                    <label>제품화 경험</label>
+                                    <div class="experience">
+                                        <div class="box2">
+                                            <select class='experience' name="project_experience">
+                                                <option value="예">예. 있습니다.</option>
+                                                <option value="아니요">아니요. 없습니다.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="add-form-detail">
+                                    <label>정부지원사업 여부</label>
+                                    <div class="goverment">
+                                        <div class="box2">
+                                            <select class='goverment' name="project_goverment">
+                                                <option value="예">예. 정부지원사업으로 진행됩니다.</option>
+                                                <option value="아니요">아니요.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class=add_btn>
+                                    <input type="submit" class="btn_add" name="btn_add" value="회원가입">
+                                </div>
+                        </form>
+                    </section>
+                </div>        
+            
+            </div>
+        </div>
     </body>
     
     <footer>

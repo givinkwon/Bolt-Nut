@@ -5,11 +5,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- IE 브라우저 호환성보기 무시 -->
         <meta name = "viewport" width = "device-width"> <!-- http://aboooks.tistory.com/352 -->
-        <meta name="apple-mobile-web-app-title" content="준비중입니다."> 
+        <meta name="apple-mobile-web-app-title" content="볼트앤너트 준비중"> 
         <meta name="description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트"> 
         <!-- https://hunit.tistory.com/312 -->
         <!-- // facebook SEO- https://wonism.github.io/meta-for-social/ -->
-        <meta name="og:title" content="준비중입니다.">
+        <meta name="og:title" content="볼트앤너트 준비중">
         <meta name="og:url" content="https://www.bolt&nut.com">
         <meta property="og:image" content="">
         <meta property="og:description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트">
@@ -18,21 +18,28 @@
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='prepare.css') }}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src=""></script>
         
-        <title>준비중입니다.</title>
+        <title>볼트앤너트 준비중</title>
     </head>
         
     <body>
-       {% include "layout/header.html" %} <!-- include header -->   
-        <div class ="body-container">
+       {% include "layout/header.html" %} <!-- include header -->    
+        
+       <div class="body-container">
             <div class="content">
                 <div class="content-header">
-            
+                    <p3>준비중입니다.</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
                 </div>
                 <div class="content-body">
-                
-                </div>
+                    <section class="login-body">
+                        <image src="/static/img/prepare.png"></image>
+                    </section>
+                </div>        
+            
             </div>
         </div>
     </body>
