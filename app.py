@@ -82,7 +82,7 @@ def submit_project():
             l=session['username']+file.filename
          
             file.save('C:/Users/rlqls/Documents/GitHub/Bolt-Nut/file/'+l)
-            conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+            conn = pymysql.connect(host='localhost', user='root', password='123456789', db='boltnut', charset='utf8')
             cursor = conn.cursor()
             query = "INSERT INTO project (project_category, project_title, project_period, project_budget, project_state,  project_content, project_finish, project_meeting, project_location, project_location_detail, project_start, project_experience, project_goverment,file, permit) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0)"
             value = (project_category, project_title, project_period, project_budget, project_state,  project_content, project_finish, project_meeting, project_location, project_location_detail, project_start, project_experience, project_goverment, l)
@@ -128,7 +128,7 @@ def btn_signup():
             error = "전화번호를 입력해주세요"
             return render_template('/accounts/signup.html', error=error)
         
-        conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+        conn = pymysql.connect(host='localhost', user='root', password='123456789', db='boltnut', charset='utf8')
         cursor = conn.cursor()
         query = "SELECT * FROM user WHERE user_name = '%s'"% (user_name)
         cursor.execute(query)
@@ -152,7 +152,7 @@ def btn_login():
     if request.method == 'POST':
         user_name = request.form["username"]
         user_pw = request.form['password']
-        conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+        conn = pymysql.connect(host='localhost', user='root', password='123456789', db='boltnut', charset='utf8')
         cursor = conn.cursor(pymysql.cursors.DictCursor)
         query = "SELECT * FROM user WHERE user_name = '%s' AND user_password = '%s'"% (user_name, user_pw)
         cursor.execute(query)
@@ -173,7 +173,7 @@ def search_project():
 
 @app.route('/search_project2', methods=["POST"])
 def search_project2():
-    conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+    conn = pymysql.connect(host='localhost', user='root', password='123456789', db='boltnut', charset='utf8')
     cursor = conn.cursor()
     query = "SELECT * FROM project WHERE permit = '1' ORDER BY project_id DESC"
     cursor.execute(query)
@@ -188,7 +188,7 @@ def project_detail():
 @app.route('/project_detail2', methods=["POST","GET"])
 def project_detail2():
     project_id = request.form['project_id']
-    conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+    conn = pymysql.connect(host='localhost', user='root', password='123456789', db='boltnut', charset='utf8')
     cursor = conn.cursor()
     query = "SELECT * FROM project WHERE project_id = '%s' ORDER BY project_id DESC"% (project_id)
     cursor.execute(query)
