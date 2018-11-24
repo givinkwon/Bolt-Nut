@@ -4,6 +4,7 @@ from flask import Flask, request, session, redirect, render_template, url_for
 from werkzeug import secure_filename
 import os
 import pymysql
+import json
 app = Flask(__name__)
 
 @app.route('/')
@@ -83,20 +84,11 @@ def submit_project():
             file.save('C:/Users/rlqls/Documents/GitHub/Bolt-Nut/file/'+l)
             conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
             cursor = conn.cursor()
-            query = "INSERT INTO project (project_category, project_title, project_period, project_budget, project_state,  project_content, project_finish, project_meeting, project_location, project_location_detail, project_start, project_experience, project_goverment,file) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            query = "INSERT INTO project (project_category, project_title, project_period, project_budget, project_state,  project_content, project_finish, project_meeting, project_location, project_location_detail, project_start, project_experience, project_goverment,file, permit) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0)"
             value = (project_category, project_title, project_period, project_budget, project_state,  project_content, project_finish, project_meeting, project_location, project_location_detail, project_start, project_experience, project_goverment, l)
             cursor.execute(query, value)
             conn.commit()
-            return render_template('index.html')
-        
-        
-     
-       
-
-
-@app.route('/search_project')
-def search_project():
-    return render_template('/project/search_project.html')
+            return render_template('/project/project_enroll.html')
 
 @app.route('/expert')
 def expert ():
@@ -174,6 +166,34 @@ def btn_login():
         else:
             error = "아이디나 비밀번호가 잘못되었습니다."
             return render_template('/accounts/login.html', error=error)
+        
+@app.route('/search_project')
+def search_project():
+    return render_template('/project/search_project.html')
+
+@app.route('/search_project2', methods=["POST"])
+def search_project2():
+    conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+    cursor = conn.cursor()
+    query = "SELECT * FROM project WHERE permit = '1' ORDER BY project_id DESC"
+    cursor.execute(query)
+    data = json.dumps(cursor.fetchall())
+    return data
+
+@app.route('/project_detail', methods=["POST","GET"])
+def project_detail():
+    project_id = request.args.get('id')
+    return render_template('/project/project_detail.html', project_id=project_id)
+
+@app.route('/project_detail2', methods=["POST","GET"])
+def project_detail2():
+    project_id = request.form['project_id']
+    conn = pymysql.connect(host='localhost', user='root', password='1234', db='boltnut', charset='utf8')
+    cursor = conn.cursor()
+    query = "SELECT * FROM project WHERE project_id = '%s' ORDER BY project_id DESC"% (project_id)
+    cursor.execute(query)
+    data = json.dumps(cursor.fetchall())
+    return data
         
 @app.route('/logout')
 def btn_logout():

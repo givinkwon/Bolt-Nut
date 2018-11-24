@@ -16,16 +16,54 @@
         <!-- twitter SEO - https://blog.outsider.ne.kr/922 // 트위터 카드 신청해야함 -->
         <meta name="twitter:card" content="summary" /> 
         <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="/path/to/favicon.ico">
         <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src=""></script>
+        <link href="{{ url_for('static', filename='search_project.css') }}" rel="stylesheet" type="text/css">
         
         <title>프로젝트 찾기</title>
     </head>
         
     <body>
-       {% extends "layout/header.html" %} <!-- include header -->          
+        <script type="text/javascript">
+            
+           $(document).ready(function() {
+                $.ajax({
+                    url : '/search_project2',
+                    success : function(data){
+                        $.each(data, function () {
+                            $('.project-body').append("<div class='project' data-item='"+this[0]+"'><div class='project-title'>" + this[2] + "</div><div class='project-detail'>" + "<img src='/static/img/period.png'>" + '남은기간&nbsp&nbsp&nbsp' + (parseInt(this[7].split("-")[2]) - parseInt(this[11].split("-")[2])) + '일' + "<img src='/static/img/money.png'>" +'예상금액&nbsp&nbsp&nbsp' + this[4] + "</div><div class='project-content'>" + this[6] + "</div></div>");
+                         });
+                    },
+                    fail : function(){
+                        alert("오류발생");
+                    },
+                    type : 'post',
+                    dataType: 'json'
+                });
+           });
+            
+           $(document).on('click','.project',function(){
+               var project_id = $(this).attr("data-item"); 
+               location.href = "/project_detail?id="+project_id;
+           });
+                
+        </script>    
+       {% include "layout/header.html" %} <!-- include header -->  
+       <div class="body-container">
+            <div class="content">
+                <div class="content-header">
+                    <p3>프로젝트 찾기</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
+                </div>
+                <div class="content-body">
+                    <section class="project-body">
+                    </section>
+                </div>        
+            
+            </div>
+        </div>
     </body>
     
     <footer>

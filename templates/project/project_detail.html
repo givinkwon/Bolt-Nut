@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- IE 브라우저 호환성보기 무시 -->
+        <meta name = "viewport" width = "device-width"> <!-- http://aboooks.tistory.com/352 -->
+        <meta name="apple-mobile-web-app-title" content="프로젝트 등록 완료"> 
+        <meta name="description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트"> 
+        <!-- https://hunit.tistory.com/312 -->
+        <!-- // facebook SEO- https://wonism.github.io/meta-for-social/ -->
+        <meta name="og:title" content="프로젝트 등록 완료">
+        <meta name="og:url" content="https://www.bolt&nut.com">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트">
+        <!-- twitter SEO - https://blog.outsider.ne.kr/922 // 트위터 카드 신청해야함 -->
+        <meta name="twitter:card" content="summary" /> 
+        <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
+        <link rel="shortcut icon" href="/path/to/favicon.ico">
+        <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='project_detail.css') }}" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <title>프로젝트 등록 완료</title>
+    </head>
+        
+    <body>
+       {% include "layout/header.html" %} <!-- include header -->    
+       <script type="text/javascript">
+            
+           $(document).ready(function() {
+                var project_id = '{{project_id}}'; 
+                $.ajax({
+                    url : '/project_detail2',
+                    success : function(data){
+                            $('.project-body').append("<div class='project-title'>" + data[0][2] + "</div>")
+                                              .append("<div class='project-detail'>" +                                                                "<div class='project-detail2'>" +'남은기간&nbsp&nbsp&nbsp' +                                   (parseInt(data[0][7].split("-")[2]) -parseInt(data[0][11].split("-")[2])) + '일             &nbsp&nbsp'+"</div>" +
+                                                         "<div class='project-detail2'>" +'예상금액&nbsp&nbsp&nbsp'+data[0]  [4]+"&nbsp&nbsp&nbsp</div>" +
+                                                         "<div class='project-detail2'>" +'업무분야&nbsp&nbsp&nbsp'+data[0]  [1]+"&nbsp&nbsp&nbsp</div>" +
+                                                         "<div class='project-detail2'>" +'예상기간&nbsp&nbsp&nbsp'+data[0]  [3]+"&nbsp&nbsp&nbsp</div>" 
+                                                     +"</div>"
+                                                    )
+                                              .append("<div class='project-detail'>" +                                                                "<div class='project-detail2'>" +'제품화경험&nbsp&nbsp&nbsp'+data[0]                           [12]+"&nbsp&nbsp&nbsp</div>" +
+                                                         "<div class='project-detail2'>" +'정부지원사업&nbsp&nbsp&nbsp'+data[0]              [13]+"&nbsp&nbsp&nbsp</div>" + 
+                                                         "<div class='project-detail2'>" +'위치&nbsp&nbsp&nbsp'+data[0]  [9]+"&nbsp&nbsp&nbsp" + data[0][10] +"&nbsp&nbsp&nbsp</div>" +
+                                                     "</div>"
+                                                    )
+                                              .append("<div class='project-content'>" + data[0][6].replace(/(\r\n|\n|\n\n)/gi, '<br />') + "</div>");
+                                              
+                    },
+                    fail : function(){
+                        alert("오류발생");
+                    },
+                    type : 'post',
+                    dataType: 'json',
+                    data: {"project_id" : project_id}
+                });
+           });    
+        </script>
+       <div class="body-container">
+            <div class="content">
+                <div class="content-header">
+                    <p3>프로젝트 세부정보</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
+                </div>
+                <div class="content-body">
+                    <div class="project-body">
+                    </div>
+                </div>        
+            
+            </div>
+        </div>
+    </body>
+    
+    <footer>
+    
+    </footer>
+</html>

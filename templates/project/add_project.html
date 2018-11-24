@@ -108,9 +108,15 @@
                                 <div class="add-form-detail">
                                     <label>프로젝트 내용</label>
                                     {% if project_content %}
-                                    <input type="text" name="project_content" value={{project_content}} class="box">
+                                    <textarea name="project_content" class="box3">{{project_content}}</textarea>
                                     {% else %}
-                                    <input type="text" name="project_content" class="box">
+                                      <textarea name="project_content" class="box3">＜프로젝트 진행 방식＞
+                                          
+                                                                                    ＜프로젝트의 현재 상황＞
+                                          
+                                                                                    ＜상세한 업무 내용＞
+                                          
+                                                                                    ＜참고자료 / 유의사항＞</textarea>
                                     {% endif %}
                                 </div>
                                 <br>
@@ -122,9 +128,9 @@
                                 <div class="add-form-detail">
                                     <label>모집 마감 일자</label>
                                     {% if project_finish %}
-                                    <input type="text" name="project_finish" value={{project_finish}} class="box">
+                                    <input type="date" name="project_finish" value={{project_finish}} class="box">
                                     {% else %}
-                                    <input type="text" name="project_finish" class="box">
+                                    <input type="date" name="project_finish" class="box">
                                     {% endif %}
                                 </div>
                                 <br>
@@ -166,16 +172,16 @@
                                     {% if project_location_detail %}
                                     <input type="text" name="project_location_detail" value={{project_location_detail}} class="box">
                                     {% else %}
-                                    <input type="text" name="project_location_detail" placeholder="도로명주소를 적어주세요."  class="box">
+                                    <input type="text" name="project_location_detail" placeholder="동까지 적어주세요."  class="box">
                                     {% endif %}
                                 </div>
                                 
                                 <div class="add-form-detail">
                                     <label>예상 시작일</label>
                                     {% if project_start %}
-                                    <input type="text" name="project_start" value={{project_start}} class="box">
+                                    <input type="date" name="project_start" value={{project_start}} class="box">
                                     {% else %}
-                                    <input type="text" name="project_start" class="box">
+                                    <input type="date" name="project_start" class="box">
                                     {% endif %}
                                 </div>
                             
@@ -184,8 +190,8 @@
                                     <div class="experience">
                                         <div class="box2">
                                             <select class='experience' name="project_experience">
-                                                <option value="예">예. 있습니다.</option>
-                                                <option value="아니요">아니요. 없습니다.</option>
+                                                <option value="유">예. 있습니다.</option>
+                                                <option value="무">아니요. 없습니다.</option>
                                             </select>
                                         </div>
                                     </div>
@@ -196,15 +202,15 @@
                                     <div class="goverment">
                                         <div class="box2">
                                             <select class='goverment' name="project_goverment">
-                                                <option value="예">예. 정부지원사업으로 진행됩니다.</option>
-                                                <option value="아니요">아니요.</option>
+                                                <option value="유">예. 정부지원사업으로 진행됩니다.</option>
+                                                <option value="무">아니요.</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             
                                 <div class=add_btn>
-                                    <input type="submit" class="btn_add" name="btn_add" value="회원가입">
+                                    <input type="submit" class="btn_add" name="btn_add" value="등록완료">
                                 </div>
                         </form>
                     </section>

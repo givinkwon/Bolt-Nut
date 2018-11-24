@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <Button
+        android:id="@+id/bt_Join"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:onClick="bt_Join"
+        android:text="Join"
+        android:textAlignment="center"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+</android.support.constraint.ConstraintLayout>
+

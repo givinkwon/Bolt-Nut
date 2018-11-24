@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- IE 브라우저 호환성보기 무시 -->
+        <meta name = "viewport" width = "device-width"> <!-- http://aboooks.tistory.com/352 -->
+        <meta name="apple-mobile-web-app-title" content="프로젝트 등록 완료"> 
+        <meta name="description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트"> 
+        <!-- https://hunit.tistory.com/312 -->
+        <!-- // facebook SEO- https://wonism.github.io/meta-for-social/ -->
+        <meta name="og:title" content="프로젝트 등록 완료">
+        <meta name="og:url" content="https://www.bolt&nut.com">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="제품의 벽을 허물다. 당신의 아이디어를 실현시켜드립니다. 볼트앤너트">
+        <!-- twitter SEO - https://blog.outsider.ne.kr/922 // 트위터 카드 신청해야함 -->
+        <meta name="twitter:card" content="summary" /> 
+        <!-- favicon(=logo) - http://webdir.tistory.com/337 -->
+        <link rel="shortcut icon" href="/path/to/favicon.ico">
+        <link href="{{ url_for('static', filename='header.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='body.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='prepare.css') }}" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src=""></script>
+        
+        <title>프로젝트 등록 완료</title>
+    </head>
+        
+    <body>
+       {% include "layout/header.html" %} <!-- include header -->    
+        
+       <div class="body-container">
+            <div class="content">
+                <div class="content-header">
+                    <p3>프로젝트 등록 완료</p3><br><br>
+                    <p2>당신의 아이디어를 실현하세요.</p2>
+                </div>
+                <div class="content-body">
+                    <section class="login-body">
+                        <image src="/static/img/project_enroll.png"></image>
+                    </section>
+                </div>        
+            
+            </div>
+        </div>
+    </body>
+    
+    <footer>
+    
+    </footer>
+</html>

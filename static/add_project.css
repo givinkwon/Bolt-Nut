@@ -8,7 +8,14 @@ p4{
     font-family: 'Gothic A1', sans-serif;
     font-size:3vh;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #000;
+}
+
+p5{
+    font-family: 'Gothic A1', sans-serif;
+    font-size:2vh;
+    font-weight: 600;
+    color: #000;
 }
 
 .add-body{
@@ -27,7 +34,7 @@ p4{
 }
 
 .add-form-detail select{
-    width:35vh;
+    width:40vh;
     height: 4vh;
     margin: 1vh;
     font-size: 2vh;
@@ -52,7 +59,7 @@ p4{
 
 
 .box{
-    width:35vh;
+    width:40vh;
     height: 4vh;
     margin: 1vh;
     font-weight: bold;
@@ -67,7 +74,7 @@ p4{
 }
 
 .box2{
-    width:35vh;
+    width:40vh;
     height: 4vh;
     margin: 1vh;
     margin-left: 0vh;
@@ -75,6 +82,19 @@ p4{
     text-align: left;
 }
 
+.box3{
+    width:40vh;
+    height: 40vh;
+    margin: 1vh;
+    margin-left: 0vh;
+    display: block;
+    text-align: left;
+    word-break:keep-all;
+    white-space:-moz-pre-wrap;
+    white-space:-pre-wrap;
+    white-space:-o-pre-wrap;
+    word-wrap:break-word;
+}
 
 
 .add_btn{
