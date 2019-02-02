@@ -46,7 +46,7 @@ def submit_project():
         project_goverment = request.form['project_goverment']
         f = request.form.get('file',False)
         if project_title is '':
-            error = "프로젝트 제목을 1 입력해주세요"
+            error = "프로젝트 제목을 입력해주세요"
             return render_template('/project/add_project.html', error=error, project_period=project_period, project_budget=project_budget, project_content=project_content, project_finish=project_finish, project_location_detail=project_location_detail, project_start=project_start)
         
         if project_period is '':
